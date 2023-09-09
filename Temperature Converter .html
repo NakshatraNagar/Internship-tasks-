@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Temperature Converter</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .temperature-converter {
+        width: 300px;
+        background-color: #6466d6;
+        border: 1px solid #cccccc;
+        padding: 10px;
+        display: flex-box;
+        flex-direction: row;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 150px;
+        height: 19rem;
+        size: 60%;
+        width: 40rem;
+      }
+
+      .input-field {
+        width: 100px;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-top: 23px;
+        margin-bottom: 15px;
+        width: 50%;
+        height: 2rem;
+      }
+      ::placeholder {
+        color: green;
+        font-weight: bolder;
+      }
+      .result {
+        font-size: 1.2em;
+        color: #333;
+      }
+
+      #convert {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #0062c5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="temperature-converter">
+      <input
+        type="text"
+        class="input-field"
+        id="celsius"
+        placeholder="Celsius"
+      />
+      <input
+        type="text"
+        class="input-field"
+        id="fahrenheit"
+        placeholder="Fahrenheit"
+      />
+      <input type="text" class="input-field" id="kelvin" placeholder="Kelvin" />
+      <div>
+        <button id="convert">Convert</button>
+      </div>
+    </div>
+    <script>
+      function convert() {
+        var celsius = document.getElementById("celsius").value;
+        var fahrenheit = celsius * (9 / 5) + 32;
+        var kelvin = celsius + 273.15;
+
+        document.getElementById("fahrenheit").value = fahrenheit;
+        document.getElementById("kelvin").value = kelvin;
+      }
+
+      document.getElementById("convert").addEventListener("click", convert);
+    </script>
+  </body>
+</html>
